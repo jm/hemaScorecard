@@ -7,3 +7,6 @@ test-results/
 playwright-report/
 blob-report/
 tests/e2e/.auth/
+# Composer / PHPUnit
+vendor/
+.phpunit.result.cache
