@@ -354,7 +354,7 @@ function rosterSchoolOptions($schoolList){
 	foreach((array)$schoolList as $school){
 		$label = $school['schoolShortName'];
 		if($label == null){
-			if($school['schoolID'] == 1){ $label = '*Unknown'; }
+			if($school['schoolID'] == SCHOOL_ID_UNKNOWN){ $label = '*Unknown'; }
 			elseif($school['schoolID'] == 2){ $label = '*Unaffiliated'; }
 			else { continue; }
 		} elseif($school['schoolBranch'] != ''){
@@ -388,6 +388,9 @@ function addNewParticipantsButtons(){
 			</a>
 			<a class='button hollow secondary' href='participantsAdditional.php'>
 				Non-Participating Entries
+			</a>
+			<a class='button hollow secondary' href='participantsImport.php'>
+				Import CSV
 			</a>
 		</div>
 

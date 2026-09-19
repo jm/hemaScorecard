@@ -43,9 +43,9 @@ VALUES
 	(1, 'Test Fencing School', 'Test School', 'TFS', 'US'),
 	(2, 'Other Fencing Club', 'Other Club', 'OFC', 'US');
 
--- Six fighters with fixed IDs and predictable names, plus one (Greta) who
--- exists in the system but is NOT entered in the event, so roster-entry
--- tests can pick a known fighter from the autocomplete.
+-- Six fighters with fixed IDs and predictable names, plus two (Greta, Hugo)
+-- who exist in the system but are NOT entered in the event: roster-entry
+-- tests pick Greta from the autocomplete, the CSV import test imports Hugo.
 INSERT INTO `systemRoster` (`systemRosterID`, `firstName`, `lastName`, `schoolID`) VALUES
 	(1, 'Alice',  'Applegate', 1),
 	(2, 'Brett',  'Bowman',    1),
@@ -53,7 +53,8 @@ INSERT INTO `systemRoster` (`systemRosterID`, `firstName`, `lastName`, `schoolID
 	(4, 'Dmitri', 'Dukas',     1),
 	(5, 'Erin',   'Eastwood',  1),
 	(6, 'Frank',  'Fischer',   1),
-	(7, 'Greta',  'Gable',     1);
+	(7, 'Greta',  'Gable',     1),
+	(8, 'Hugo',   'Haldane',   1);
 
 INSERT INTO `eventRoster` (`rosterID`, `systemRosterID`, `eventID`, `schoolID`, `isTeam`, `eventCheckIn`, `eventWaiver`) VALUES
 	(1, 1, 1, 1, 0, 1, 1),
